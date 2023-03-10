@@ -4,6 +4,7 @@ import axios from 'axios';
 const RickYMorty = () => {
    const [api, setApi] = useState({})
    const [search, setSearch] = useState("")
+   const [residents, setResidents] = useState([])
     useEffect(()=>{
         axios.get(`https://rickandmortyapi.com/api/location/${Math.floor(Math.random() * (126) + 1)}`)
         .then((result)=>{ 
@@ -19,15 +20,20 @@ const RickYMorty = () => {
         })
         .catch((error)=> console.error(error))
     }
+    let characters = axios.get(`https://rickandmortyapi.com/api/location/${search}`)
+    .then((result)=>{
+        setResidents(result.data?.results.residents)
+    })
+    .catch((error)=> console.error(error))
     return (
         <div>
         <input type="text" onChange={(e)=>{setSearch((e.target.value))}}/>
         <button onClick={searchId}>Search</button>
         <h1>{api.name}</h1>
         <ul>
-            {api.map((api)=>{
+            {residents.map((residents)=>{
                 <li>
-                    {api.name}
+                    <h3>{residents}</h3>
                 </li>
             })}
         </ul>
