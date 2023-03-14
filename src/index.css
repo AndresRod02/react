@@ -41,7 +41,7 @@ body::-webkit-scrollbar-thumb{
 .empty{
     position: fixed;
     z-index: 999;
-    right: 5%;
+    right: 0%;
     top: 50%;
     display: flex;
     justify-content: center;
@@ -178,6 +178,34 @@ body::-webkit-scrollbar-thumb{
 .input::-webkit-inner-spin-button,
 .input::-webkit-outer-spin-button{
     display: none;
+}
+.cardDimension{
+    position: absolute;
+    z-index: 10;
+    left: 20%;
+    top: 40%;
+    color: aliceblue;
+    display: flex;
+    background-color: #3E3C3C;
+    opacity: 1;
+}
+.dimensionSub{
+    display: flex;
+    position: absolute;
+    gap: 8%;
+}
+.dimensionInfo{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    gap: 11%;
+}
+.population{
+    margin-left: 50px;
+}
+.location{
+    position: relative;
+    
 }
 .search{
     position: absolute;

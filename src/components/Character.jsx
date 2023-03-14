@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { BoxIconElement } from 'boxicons';
 const Character = ({residentsData}) => {
     const [residents, setResidents] = useState([])
     useEffect(()=>{
@@ -11,7 +12,7 @@ const Character = ({residentsData}) => {
             setResidents(result.data)})
         .catch((error)=> console.error(error))
     }, [])
-    let color = residents.status === 'dead'
+    let color = residents.status === 'Dead'
     ? 'red'
     : residents.status === 'unknown'
       ? 'gray'
