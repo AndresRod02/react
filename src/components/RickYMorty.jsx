@@ -33,6 +33,10 @@ const RickYMorty = () => {
                 setIsEmpty(false)
                 setDimension(result.data.id)
                 setResidents(result.data?.residents)
+                        //Loader con TimeOut porque la api carga los datos muy rápido y no se alcanza a apreciar
+                setTimeout(() => {
+                setIsLoading(false);
+                }, 3000);
             }
         })
         .catch((error)=> console.error(error))
@@ -87,10 +91,6 @@ const RickYMorty = () => {
                 .catch((error) => console.error(error));
         }
       };
-        //Loader con TimeOut porque la api carga los datos muy rápido y no se alcanza a apreciar
-    setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
     return (
         <div>
             {isLoading && <Loader/>}
