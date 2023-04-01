@@ -1,7 +1,9 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router';
+import { useSelector } from 'react-redux';
 const ProtectedRoutes = () => {
-    if(10>0){
+    const username = useSelector(state => state.username)
+    if(username){
         return <Outlet/>
     }
     else{

@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: '/src/public/pokeball.png';
+    min-height: 100vh;
+}
+.home > img{
+    width: 100px;
+}
