@@ -11,17 +11,17 @@ const Character = () => {
         .catch((error)=>console.error(error))
     }, [name])
     return (
-        <div className='view-container'>
-            <img src={data.sprites?.front_default} alt="" />
-            <div>
+        <div className='containerDetails'>
+            <img src="/pokeball.png" alt="" className='pokeball' />
+            <img src="/pokemon.webp" alt="" className='pokemonImg'/>
+            <div className='principalDetails'>
+                <img src={data.sprites?.other.dream_world.front_default} alt="" />
                 <h1 className='pokemon-name'>{data.name}</h1>
-                <h3>{data.id}</h3>
+                <h3 className='weight'>{data.weight} <br /> <span>Weight</span></h3>
+                <h3 className='height'>{data.height} <br /> <span>Height</span> </h3>
+                <h3 className='idDetail'>#{data.id}</h3>
             </div>
-            <div>
-                <h3>{data.weight}</h3>
-                <h3>{data.height}</h3>
-            </div>
-            <div>
+            <div className='abilities'>
                 <h2>Abilities</h2>
                 {data.abilities ? (
                 data.abilities.map((ability, index) => (
@@ -31,7 +31,7 @@ const Character = () => {
             <p>No abilities found.</p>
                 )}
             </div>
-            <div>
+            <div className='movements'>
                 <h2>Movements</h2>
                 <ul>
                     {data.moves && data.moves.map((move, index) => (
@@ -39,7 +39,7 @@ const Character = () => {
                     ))}
                 </ul>
             </div>
-            <div>
+            <div className='typeDetails'>
                 <h2>Types</h2>
                 {data.types?.map((type, index) => (
                 <h3 key={index}>{type.type.name}</h3>
