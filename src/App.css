@@ -165,11 +165,13 @@
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.332);
-    width: 350px;
+    width: 20rem;
     border: none;
     z-index: 2;
     position: absolute;
-    left: 32.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
     top: 20rem;
     text-align: center;
 }
