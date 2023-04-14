@@ -196,7 +196,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ffa600;
+    background-color: #fafa00;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
@@ -209,17 +209,18 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: #ffffffe9;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
   }
   
   .slider input[type="checkbox"]:checked + .slider-toggle {
-    background-color: #fafa00;
+    background-color: #ffa600;
   }
   
   .slider input[type="checkbox"]:checked + .slider-toggle:before {
+    background-color: #000000db;
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -233,7 +234,7 @@
     background-color: aquamarine;
 }
 .principalDetails{
-    margin-top: 10rem;
+    margin-top: 14rem;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
@@ -241,38 +242,117 @@
     height: 20rem;
     position: relative;
     background-color: white;
+    border: 2px solid rgba(161, 157, 157, 0.26);
+    right: 6rem;
 }
 .principalDetails > img{
     width: 280px;
     position: absolute;
     top: -7rem;
     left: 15rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
 }
 .pokemonImg{
-    width: 350px;
+    width: 300px;
     left: 10rem;
     top: 0;
     position: absolute;
+    
 }
 .pokemon-name{
     position: absolute;
     left: 20rem;
-    bottom: 3rem;
+    bottom: 2rem;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
 }
 .weight{
     position: absolute;
     left: 10rem;
     bottom: 6rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
 }
 .height{
     position: absolute;
     left: 35rem;
     bottom: 6rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
 }
 .idDetail{
     position: absolute;
     left: 25rem;
-    bottom: 1.5rem;
+    bottom: 2.2rem;
     background-color: aliceblue;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.558);
+}
+.abilities{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    background-color: white;
+    position: relative;
+    width: 20rem;
+    height: 10rem;
+    gap: 1rem;
+    align-items: center;
+    left: 8.9rem;
+    top: 1rem;
+}
+.abilities > h2{
+    position: absolute;
+    right: 6.1rem;
+    top: 0.3rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
+}
+.abilities > h3{
+    padding: 1rem;
+    border: 1px solid rgba(161, 157, 157, 0.26);
+    margin: 3rem 0rem 0rem 0rem;
+}
+.typeDetails{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    background-color: white;
+    position: absolute;
+    width: 26rem;
+    height: 10rem;
+    gap: 1rem;
+    align-items: center;
+    left: 11.3rem;
+    top: 35rem;
+}
+.typeDetails > h2{
+    position: absolute;
+    left: 11rem;
+    top: 0.3rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
+}
+.typeDetails > h3{
+    padding: 1rem;
+    border: 1px solid rgba(161, 157, 157, 0.26);
+    margin: 3rem 0rem 0rem 0rem;
+}
+.movements{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    left: 25rem;
+    bottom: 30rem;
+}
+.movements > h2{
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
+}
+.movements > ul > li{
+    margin: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(161, 157, 157, 0.26);
 }
