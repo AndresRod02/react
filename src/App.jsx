@@ -3,7 +3,6 @@ import './App.css'
 import Home from './pages/Home'
 import Characters from './pages/Characters'
 import Character from './pages/Character'
-import MainLayout from './components/MainLayout'
 import ProtectedRoutes from './components/ProtectedRoutes'
 function App() {
   return (

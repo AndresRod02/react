@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Pokemon_Hollow';
+    src: url(/fonts/Pokemon_Hollow.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 .home{
     display: flex;
@@ -14,8 +20,14 @@
     width: 130px;
     z-index: 1;
 }
+.home > h1{
+    font-family: 'Pokemon_Hollow';
+}
 .home > h2{
     padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: 100;
 }
 .home  img:nth-child(2){
     width: 400px;
@@ -48,6 +60,9 @@
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.558);
     width: 350px;
     border: none;
+    z-index: 2;
+    font-family: 'Pokemon_Hollow';
+    font-size: 2rem;
 }
 .username > button{
     background-color: rgb(27, 221, 27);
@@ -58,4 +73,91 @@
     margin-left: 19.5rem;
     margin-top: 0px;
     border: none;
+    z-index: 2;
 }
+.characters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    width: 80%;
+}
+
+.card{
+    margin: 10px 10px 10px 0px;
+    background-color: #2196F3;
+    list-style-type: none;
+    border-radius: 20px;
+    display: flex;
+}
+.detail{
+    background-color: #d12020;
+    margin-top: 10px;
+    border-radius: 1rem;
+    color: aliceblue;
+}
+.select, .search{
+    height: 2rem;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.558);
+    width: 350px;
+    border: none;
+    z-index: 2;
+}
+.slider {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .slider input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider-toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  .slider input[type="checkbox"]:checked + .slider-toggle {
+    background-color: #2196F3;
+  }
+  
+  .slider input[type="checkbox"]:checked + .slider-toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  

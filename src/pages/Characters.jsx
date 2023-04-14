@@ -13,12 +13,14 @@ const Characters = () => {
   const [searchType, setSearchType] = useState('')
   const [itemsPerPage, setItemsPerPage] = useState(20);
   const [slider, setSlider] = useState(false)
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const pageButtons = Math.min(maxPageButtons, pages.count);
-    const startButton = Math.max(1, Math.min(page - Math.floor(pageButtons / 2), pages.count - pageButtons + 1));
-    const endButton = Math.min(pages.count, startButton + pageButtons - 1);
-    function range(start, end) {
+
+
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const pageButtons = Math.min(maxPageButtons, pages.count);
+  const startButton = Math.max(1, Math.min(page - Math.floor(pageButtons / 2), pages.count - pageButtons + 1));
+  const endButton = Math.min(pages.count, startButton + pageButtons - 1);
+  function range(start, end) {
         return Array.from({ length: end - start + 1 }, (_, i) => start + i);
       }
       const username = useSelector(state => state.username)
@@ -87,29 +89,33 @@ const handleTypeChange = (e) => {
   
   
   return (
-    <div>
+<div className='characters'>
   <h1>Pokedex</h1>
   <h3>Welcome {username}, here you can find your favorite pokemon</h3>
-{ !slider && <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Pokemon by Name" />}
-{ slider && <select value={searchType} onChange={handleTypeChange}>
+{ slider && <select value={searchType} onChange={handleTypeChange} className='select'>
   <option value="">Seleccionar tipo</option>
   {types.map((type) => (
     <option key={type.name} value={type.name}>{type.name}</option>
   ))}
 </select>}
-<input type="checkbox" value={slider} onChange={()=>setSlider(!slider)}/>
+{ !slider && <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Pokemon by Name" className='search'/>}
+<label class="slider">
+  <input type="checkbox" value={slider} onChange={()=>setSlider(!slider)}/>
+  <span class="slider-toggle"></span>
+</label>
 
-  <ul>
+
+  <ul className='cards'>
     {filteredCharacters.map((character) => (
-      <li key={character.name}>
+      <li key={character.name} className='card'>
         <Link to={`/characters/${character.name}`}>
           <img src={character.image} alt="" />
           <h3>{character.name}</h3>
-          <p>Type: {character.type}</p>
-          <p>HP: {character.hp}</p>
-          <p>Attack: {character.attack}</p>
-          <p>Defense: {character.defense}</p>
-          <p>Speed: {character.speed}</p>
+          <p className='detail'>Type: {character.type}</p>
+          <p className='detail'>HP: {character.hp}</p>
+          <p className='detail'>Attack: {character.attack}</p>
+          <p className='detail'>Defense: {character.defense}</p>
+          <p className='detail'>Speed: {character.speed}</p>
         </Link>
       </li>
     ))}
