@@ -87,30 +87,54 @@ const handleTypeChange = (e) => {
     getData();
   }
   
-  
+  const colors = {
+    normal : '#616161',
+    fighting: '#dd5a5a',
+    flying: '#55b6e2',
+    poison: '#5555e2',
+    ground: '#613b13',
+    rock: '#9a9997',
+    bug: '#7c3795',
+    ghost: '#05033f',
+    steel: '#303030',
+    fire: '#e21313',
+    water: '#5683ff',
+    grass: '#48da8f',
+    electric: '#dbe43d',
+    psychic: '#3dbae4',
+    ice: '#07c8f3',
+    dragon: '#f38107',
+    dark: '#111111',
+    fairy: '#ef2fe5',
+    unknown: '#0f4a1f',
+    shadow: '#4a0f41'
+  }
   return (
 <div className='characters'>
+<img src='/pokeball.png' alt="" className='pokeball'/>
   <h1>Pokedex</h1>
   <h3>Welcome {username}, here you can find your favorite pokemon</h3>
 { slider && <select value={searchType} onChange={handleTypeChange} className='select'>
-  <option value="">Seleccionar tipo</option>
+  <option value="">Choose a type</option>
   {types.map((type) => (
     <option key={type.name} value={type.name}>{type.name}</option>
   ))}
 </select>}
 { !slider && <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search Pokemon by Name" className='search'/>}
-<label class="slider">
+<label htmlFor="">Pokemon</label>
+<label className="slider">
   <input type="checkbox" value={slider} onChange={()=>setSlider(!slider)}/>
-  <span class="slider-toggle"></span>
+  <span className="slider-toggle"></span>
 </label>
+<label htmlFor="">Type</label>
 
 
   <ul className='cards'>
     {filteredCharacters.map((character) => (
-      <li key={character.name} className='card'>
+      <li key={character.name} className='card' style={{backgroundColor: colors[character.type]}}>
         <Link to={`/characters/${character.name}`}>
-          <img src={character.image} alt="" />
-          <h3>{character.name}</h3>
+          <img src={character.image} alt="" className='pokemon'/>
+          <h3 className='name' id='name'>{character.name}</h3>
           <p className='detail'>Type: {character.type}</p>
           <p className='detail'>HP: {character.hp}</p>
           <p className='detail'>Attack: {character.attack}</p>
