@@ -13,7 +13,7 @@ const Username = () => {
         navigate('/characters')
     }
     return (
-        <div>
+        <div className='username'>
             <input type="text" required value={value} onChange={e =>setValue(e.target.value)}/>
             <button onClick={changeValue}>
                 <box-icon name='send' type='solid' color='#ffffff' ></box-icon>
