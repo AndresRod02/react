@@ -95,12 +95,15 @@
     justify-content: center;
     align-items: center;
 }
+.characters > button{
+    background-color: #fafa00;
+}
 .characters > h1{
     font-family: 'Pokemon_Hollow';
     font-size: 4rem;
 }
 .characters > h3{
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 .cards{
     display: grid;
@@ -150,10 +153,14 @@
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.558);
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.332);
     width: 350px;
     border: none;
     z-index: 2;
+    position: absolute;
+    left: 32.5rem;
+    top: 20rem;
+    text-align: center;
 }
 .slider {
     display: inline-block;
@@ -161,6 +168,9 @@
     width: 60px;
     height: 34px;
   }
+.type{
+    padding-bottom: 5rem;
+}
   
   .slider input[type="checkbox"] {
     opacity: 0;
@@ -175,7 +185,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #bf1010;
+    background-color: #ffa600;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;

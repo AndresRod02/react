@@ -126,7 +126,7 @@ const handleTypeChange = (e) => {
   <input type="checkbox" value={slider} onChange={()=>setSlider(!slider)}/>
   <span className="slider-toggle"></span>
 </label>
-<label htmlFor="">Type</label>
+<label htmlFor="" className='type'>Type</label>
 
 
   <ul className='cards'>
@@ -148,7 +148,7 @@ const handleTypeChange = (e) => {
   {range(startButton, endButton).map((pageNumber) => {
   const isActive = pageNumber === page;
   return (
-    <button
+      <button
       key={pageNumber}
       onClick={() => {
         setPage(pageNumber);
@@ -157,7 +157,7 @@ const handleTypeChange = (e) => {
       className={isActive ? "active" : ""}
     >
       {pageNumber}
-    </button>
+      </button>
   );
 })}
 
