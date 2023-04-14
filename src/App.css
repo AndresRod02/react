@@ -95,8 +95,19 @@
     justify-content: center;
     align-items: center;
 }
-.characters > button{
-    background-color: #fafa00;
+.numbers{
+    display: flex;
+    justify-content: space-between;
+}
+.numbers > button{
+    border-radius: 50%;
+    background-color: #dd5a5a;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 1rem 7rem 0 5rem;
+    border: none;
+    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.332);
 }
 .characters > h1{
     font-family: 'Pokemon_Hollow';

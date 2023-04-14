@@ -144,7 +144,7 @@ const handleTypeChange = (e) => {
       </li>
     ))}
   </ul>
-
+  <div className='numbers'>
   {range(startButton, endButton).map((pageNumber) => {
   const isActive = pageNumber === page;
   return (
@@ -160,7 +160,7 @@ const handleTypeChange = (e) => {
       </button>
   );
 })}
-
+  </div>
 </div>
   );
 };
