@@ -132,7 +132,7 @@ const handleTypeChange = (e) => {
   <ul className='cards'>
     {filteredCharacters.map((character) => (
       <li key={character.name} className='card' style={{backgroundColor: colors[character.type]}}>
-        <Link to={`/characters/${character.name}`}>
+        <Link to={`/characters`}>
           <img src={character.image} alt="" className='pokemon'/>
           <h3 className='name' id='name'>{character.name}</h3>
           <p className='detail'>Type: {character.type}</p>
